@@ -1,6 +1,6 @@
 <template>
-123 <i class="iconfont icon-douyin"></i>
-<div class="box"></div>
+    <!-- 一级路由出口 -->
+    <router-view></router-view>
 </template>
 
 <style lang="less">

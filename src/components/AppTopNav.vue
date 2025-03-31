@@ -1,8 +1,16 @@
-<template lang="">
+<template>
     <div class="app-top-nav">
         <div class="w">
             <ul>
-                <li>
+                <template v-if = "userInfo?.token">
+                    <li>
+                      <a href="js:;">张三</a>
+                    </li>
+                    <li>
+                      <a href="js:;">退出登录</a>
+                    </li>
+                </template>
+                <li v-else>
                     <a href="js:;">登录/注册</a>
                 </li>
                 <li>
@@ -26,12 +34,23 @@
     </div>
 </template>
 <script>
-export default {};
+import { useStore } from "vuex";
+import { computed } from "vue";
+export default {
+  setup(props) {
+    const store = useStore();
+    let userInfo = computed(() => {
+      return store.state.user.userInfo;
+    });
+    console.log("userinfo in setup:", userInfo.value);
+    return { userInfo };
+  },
+};
 </script>
 <style lang="less" scoped>
 .app-top-nav {
   background-color: #333;
-
+  width: 100%;
   ul {
     display: flex;
     height: 40px;

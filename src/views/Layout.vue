@@ -6,7 +6,7 @@
      <AppTopNav/>
 
      <!-- 2.头部区域 -->
-    <div>头部区域</div>
+    <MyHeadr/>
 
     <!-- 3.中间内容区域 -->
      <div class="main">
@@ -20,9 +20,11 @@
 </template>
 <script>
 import AppTopNav from '@/components/AppTopNav'
+import MyHeadr from '@/components/MyHeader.vue';
 export default {
     components: {
-        AppTopNav
+        AppTopNav,
+        MyHeadr
     }
 }
 </script>

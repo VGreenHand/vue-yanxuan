@@ -1,38 +1,41 @@
 <template>
   <div>
     <ul class="app-header-nav">
-      <li v-for="item in list" :key="item.id">
-        <router-link>{{item.name}}</router-link>
+      <li class="item" >
+        <router-link class="link" :to="'/'">首页</router-link>
+      </li>
+      <li class="item" v-for="item in list" :key="item.id">
+        <router-link class="link" :to="'/category/'+ item.id">{{item.name}}</router-link>
         <!-- 悬停弹窗 -->
         <div class="hover-box">
           <ul>
             <li><a href="#">
                 <img src="@/assets/images/logo.png" alt="">
-                <div>
-                  商品名称
-                </div>
               </a>
+              <div>
+                商品名称1
+              </div>
             </li>
             <li><a href="#">
                 <img src="@/assets/images/logo.png" alt="">
-                <div>
-                  商品名称
-                </div>
               </a>
+              <div>
+                商品名称2
+              </div>
             </li>
             <li><a href="#">
                 <img src="@/assets/images/logo.png" alt="">
-                <div>
-                  商品名称
-                </div>
               </a>
+              <div>
+                商品名称3
+              </div>
             </li>
             <li><a href="#">
                 <img src="@/assets/images/logo.png" alt="">
-                <div>
-                  商品名称
-                </div>
               </a>
+              <div>
+                商品名称4
+              </div>
             </li>
           </ul>
         </div>
@@ -57,8 +60,8 @@ export default {
 </script>
 <style lang="less" scoped>
 .app-header-nav {
-  li {
-    position: relative;
+  position: relative;
+  .item {
     float: left;
     padding: 0 10px;
     font-weight: bold;
@@ -69,31 +72,39 @@ export default {
       color: @xtxColor;
       border-bottom: 2px solid @xtxColor;
     }
-    a {
+    .link {
       font-size: 15px;
       padding-bottom: 9px;
-      &:hover {
+    }
+    &:hover {
+      .link {
         color: @xtxColor;
         border-bottom: 2px solid @xtxColor;
       }
+      .hover-box {
+        opacity: 1;
+        height: 120px;
+      }
     }
-    // a:hover{
-    //         color: @xtxColor;
-    //         border-bottom: 2px solid @xtxColor;
-    // }
   }
   .hover-box {
     position: absolute;
     left: 0;
-    top: 40px;
+    top: 42px;
+    opacity: 0;
     background-color: #fff;
     box-shadow: 0 0 5px #ccc;
     padding: 10px;
     width: 1100px;
-    height: 120px;
+    height: 0px;
+    overflow: hidden;
+    transition: all .5s;
     ul {
+      display: flex;
       li {
         height: 100px;
+        width: 110px;
+        text-align: center;
         a {
           border-bottom: 0;
         }

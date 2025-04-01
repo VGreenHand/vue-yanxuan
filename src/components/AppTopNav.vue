@@ -1,37 +1,37 @@
 <template>
-    <div class="app-top-nav">
-        <div class="w">
-            <ul>
-                <template v-if = "userInfo?.token">
-                    <li>
-                      <a href="js:;">张三</a>
-                    </li>
-                    <li>
-                      <a href="js:;">退出登录</a>
-                    </li>
-                </template>
-                <li v-else>
-                    <a href="js:;">登录/注册</a>
-                </li>
-                <li>
-                    <a href="js:;">我的订单</a>
-                </li>
-                <li>
-                    <a href="js:;">甄选家</a>
-                </li>
-                <li>
-                    <a href="js:;">企业采购</a>
-                </li>
-                <li>
-                    <a href="js:;">客户服务</a>
-                </li>
-                <li>
-                    <a href="js:;">
-                        <i class="iconfont icon-shouji"></i>APP</a>
-                </li>
-            </ul>
-        </div>
+  <div class="app-top-nav">
+    <div class="w">
+      <ul>
+        <template v-if="userInfo?.token">
+          <li>
+            <a href="js:;">张三</a>
+          </li>
+          <li>
+            <a href="js:;">退出登录</a>
+          </li>
+        </template>
+        <li v-else>
+          <a href="js:;">登录/注册</a>
+        </li>
+        <li>
+          <a href="js:;">我的订单</a>
+        </li>
+        <li>
+          <a href="js:;">甄选家</a>
+        </li>
+        <li>
+          <a href="js:;">企业采购</a>
+        </li>
+        <li>
+          <a href="js:;">客户服务</a>
+        </li>
+        <li>
+          <a href="js:;">
+            <i class="iconfont icon-shouji"></i>APP</a>
+        </li>
+      </ul>
     </div>
+  </div>
 </template>
 <script>
 import { useStore } from "vuex";

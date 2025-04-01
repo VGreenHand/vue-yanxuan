@@ -26,22 +26,28 @@
       <!-- 右侧区域 -->
       <div class="cart">
         <a href="#">
-            <i class="iconfont icon-gouwuchekong"></i>
-            购物车
-            <em>2</em>
+          <i class="iconfont icon-gouwuchekong"></i>
+          购物车
+          <em>2</em>
         </a>
       </div>
     </div>
     <!-- 下区域 二级导航-->
-     <AppHeaderNav />
+    <AppHeaderNav />
   </div>
 </template>
 <script>
-import AppHeaderNav from './AppHeaderNav.vue';
+import AppHeaderNav from "./AppHeaderNav.vue";
+import { useStore } from "vuex";
 export default {
-    components: {
-        AppHeaderNav
-    }
+  components: {
+    AppHeaderNav,
+  },
+  setup(props) {
+    const store = useStore();
+    // 触发action
+    store.dispatch("category/getAllCategory");
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -119,15 +125,15 @@ export default {
     border: 1px solid @xtxColor;
     font-size: 16px;
     text-align: center;
-    em{
-        display: inline-block;
-        width: 18px;
-        height: 18px;
-        line-height: 18px;
-        background-color: #f00;
-        color: #fff;
-        border-radius: 50%;
-        margin-left: 5px;
+    em {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      background-color: #f00;
+      color: #fff;
+      border-radius: 50%;
+      margin-left: 5px;
     }
   }
 }

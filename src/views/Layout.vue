@@ -10,6 +10,7 @@
 
     <!-- 3.中间内容区域 -->
      <div class="main">
+        <!-- 主页 -->
         <!-- 二级路由 -->
         <router-view></router-view>
      </div>

@@ -1,13 +1,15 @@
-<template lang="">
-    <div>
-        主页
-    </div>
+<template>
+  <div class="home w">
+    <HomeBanner/>
+  </div>
 </template>
 <script>
+import HomeBanner from "./HomeBanner.vue";
 export default {
-
-}
+  components: {
+    HomeBanner
+  }
+};
 </script>
-<style lang="">
-
+<style lang="less" scoped>
 </style>

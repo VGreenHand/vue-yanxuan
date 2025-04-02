@@ -1,13 +1,14 @@
 <template>
   <div>
     <ul class="app-header-nav">
-      <li class="item" >
+      <li class="item">
         <router-link class="link" :to="'/'">首页</router-link>
       </li>
-      <li class="item" v-for="item in list" :key="item.id">
-        <router-link class="link" :to="'/category/'+ item.id">{{item.name}}</router-link>
+      <li class="item" v-for="item in list" :key="item.id" @mouseenter="show(item)" @mouseleave="hide(item)">
+        <router-link class="link" :to="'/category/'+ item.id" @click="hide(item)">
+          {{item.name}}</router-link>
         <!-- 悬停弹窗 -->
-        <div class="hover-box">
+        <div class="hover-box" :class="{active:item.open}">
           <ul>
             <li><a href="#">
                 <img src="@/assets/images/logo.png" alt="">
@@ -54,7 +55,13 @@ export default {
     const list = computed(() => {
       return store.state.category.cateList;
     });
-    return { list };
+    const show = (item) => {
+      item.open = true;
+    };
+    const hide = (item) => {
+      item.open = false;
+    };
+    return { list, show, hide };
   },
 };
 </script>
@@ -62,11 +69,12 @@ export default {
 .app-header-nav {
   position: relative;
   .item {
+    // position: relative;
     float: left;
-    padding: 0 10px;
+    padding: 0 10px 10px;
     font-weight: bold;
-    height: 40px;
-    line-height: 40px;
+    height: 45px;
+    line-height: 45px;
     // 默认选择首页高亮
     .router-link-exact-active {
       color: @xtxColor;
@@ -82,8 +90,11 @@ export default {
         border-bottom: 2px solid @xtxColor;
       }
       .hover-box {
-        opacity: 1;
+        opacity: 0;
         height: 120px;
+      }
+      .active {
+        opacity: 1;
       }
     }
   }
@@ -98,7 +109,8 @@ export default {
     width: 1100px;
     height: 0px;
     overflow: hidden;
-    transition: all .5s;
+    // transition: opacity 0.5s;
+    transition: all 0.5s;
     ul {
       display: flex;
       li {

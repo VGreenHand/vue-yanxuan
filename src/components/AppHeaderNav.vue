@@ -70,11 +70,12 @@ export default {
   position: relative;
   .item {
     // position: relative;
+    // clear: both;
     float: left;
-    padding: 0 10px 10px;
+    padding: 0 15px 0px;
     font-weight: bold;
-    height: 45px;
-    line-height: 45px;
+    height: 35px;
+    line-height: 35px;
     // 默认选择首页高亮
     .router-link-exact-active {
       color: @xtxColor;
@@ -82,7 +83,8 @@ export default {
     }
     .link {
       font-size: 15px;
-      padding-bottom: 9px;
+      padding-bottom: 5px;
+      // display: block; // 确保链接填充父元素
     }
     &:hover {
       .link {
@@ -91,17 +93,22 @@ export default {
       }
       .hover-box {
         opacity: 0;
-        height: 120px;
+        visibility: hidden;
+        height: 132px; // 原高度120px + 上下padding 12px
+        pointer-events: none; // 禁用交互
       }
       .active {
-        opacity: 1;
+        pointer-events: auto; // 启用交互
+        visibility: visible; // 确保激活时可见
+        opacity: 1; // 确保激活时可见
       }
     }
   }
   .hover-box {
     position: absolute;
-    left: 0;
     top: 42px;
+    left: -26%; // 居中定位
+    transform: translateX(25%);
     opacity: 0;
     background-color: #fff;
     box-shadow: 0 0 5px #ccc;
@@ -109,8 +116,11 @@ export default {
     width: 1100px;
     height: 0px;
     overflow: hidden;
-    // transition: opacity 0.5s;
-    transition: all 0.5s;
+    transition: all 0.3s ease;
+    z-index: 999; // 确保层级高于内容区域
+    visibility: hidden;
+    // pointer-events: none; // 禁用交互
+
     ul {
       display: flex;
       li {

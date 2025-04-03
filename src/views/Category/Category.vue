@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w">
     category
   </div>
 </template>

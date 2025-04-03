@@ -7,5 +7,5 @@ import '@/assets/styles/base.css'
 // 引入ElementUI
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import myElement from '@/components/library/AppBanner'
-createApp(App).use(store).use(router).use(ElementPlus).use(myElement).mount('#app')
+import AppBanner from '@/components/library/AppBanner'
+createApp(App).use(store).use(router).use(ElementPlus).use(AppBanner).mount('#app')

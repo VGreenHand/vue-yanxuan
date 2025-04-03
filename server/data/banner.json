@@ -1,0 +1,23 @@
+{
+    "msg": "操作成功",
+    "result": [
+        {
+            "id": "16",
+            "imgUrl": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-15/dfc11bb0-4af5-4e9b-9458-99f615cc685a.jpg",
+            "hrefUrl": "category1005000",
+            "type": "1"
+        },
+        {
+            "id": "16",
+            "imgUrl": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-15/dfc11bb0-4af5-4e9b-9458-99f615cc685a.jpg",
+            "hrefUrl": "category1005000",
+            "type": "1"
+        },
+        {
+            "id": "16",
+            "imgUrl": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-15/dfc11bb0-4af5-4e9b-9458-99f615cc685a.jpg",
+            "hrefUrl": "category1005000",
+            "type": "1"
+        }
+    ]
+}

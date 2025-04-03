@@ -1,7 +1,7 @@
 <template>
   <div class="home w">
-    <HomeBanner/>
-    <AppBanner/>
+    <HomeBanner />
+    <AppBanner />
   </div>
 </template>
 <script>
@@ -11,7 +11,7 @@ export default {
   components: {
     HomeBanner,
     AppBanner
-  }
+  },
 };
 </script>
 <style lang="less" scoped>
